@@ -1,0 +1,60 @@
+ELECTRICITY BILL
+
+Write a program in python to calculate and print the Electricity bill where the unit consumed by the user is given from test case. It prints the total amount the customer has to pay. The charges are as follows:
+
+Unit Charge / Unit
+
+Upto 199 @1.20
+
+200 and above but less than 400 @1.50
+
+400 and above but less than 600 @1.80
+
+600 and above @2.00
+
+If the bill exceeds Rs.400 then a surcharge of 15% will be charged and the minimum bill should be of Rs.100/-
+
+
+
+def calculate_bill(units):
+    if units < 0:
+        return "Invalid input. Units consumed cannot be negative."
+
+   
+    bill = 0
+    if units <= 199:
+        bill = units * 1.20
+    elif units <= 399:
+        bill = 199 * 1.20 + (units - 199) * 1.50
+    elif units <= 599:
+        bill = 199 * 1.20 + 200 * 1.50 + (units - 399) * 1.80
+    else:
+        bill = 199 * 1.20 + 200 * 1.50 + 200 * 1.80 + (units - 599) * 2.00
+
+    
+    surcharge = bill * 0.15 if bill > 400 else 0
+    total_bill = bill + surcharge
+
+   
+    total_bill = max(total_bill, 100)
+
+    return total_bill
+
+
+print(calculate_bill(199)) 
+print(calculate_bill(300))  
+print(calculate_bill(500))  
+print(calculate_bill(700))  
+print(calculate_bill(1000)) 
+print(calculate_bill(-50))
+
+
+
+
+output:
+output:   238.79999999999998
+390.29999999999995
+828.6899999999999
+1265.9199999999998
+1955.9199999999998
+Invalid input. Units consumed cannot be negative.

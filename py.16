@@ -1,0 +1,25 @@
+ Calculate student gradedef calculate_grade(marks):
+
+ 
+
+    average_mark = sum(marks) / len(marks)    
+    if average_mark >= 90:
+        grade = 'A'
+    elif average_mark >= 80:
+        grade = 'B'
+    elif average_mark >= 70:
+        grade = 'C'
+    elif average_mark >= 60:
+        grade = 'D'
+    elif average_mark >= 50:
+        grade = 'E'
+    else:
+        grade = 'F'    
+    return grade
+print("Enter the marks in three subjects:")
+marks = list(map(int, input().split()))
+if len(marks) == 3 and all(0 <= mark <= 100 for mark in marks):
+    grade = calculate_grade(marks)
+    print(f"The student's grade is {grade}.")
+else:
+    print("Invalid input")

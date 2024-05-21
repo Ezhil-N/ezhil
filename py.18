@@ -1,0 +1,11 @@
+If the input is greater than 0, it multiplies the input by 60 to convert it to minutes and then prints the result divided by 11. If the input is not greater than 0, it prints an error message "Invalid input".
+
+
+
+
+time=int(input("Enter the Time: "))
+if time>0:
+    time = time*60
+    print(time,"/11")
+else:
+    print("Invaild input")

@@ -1,0 +1,31 @@
+Write a python program for the below scenario:
+
+A company insures its driver in the following cases
+
+I. If the driver is married or
+
+II. If the driver is unmarried, male & above 30 years of age or
+
+III. If the driver is unmarried, female & above 25 years of age.
+
+
+
+
+
+def is_eligible_for_insurance(gender, age, is_married):
+    if is_married:
+        return True
+    elif gender == 'male' and age > 30:
+        return True
+    elif gender == 'female' and age > 25:
+        return True
+    else:
+        return False
+
+# Test cases
+print(is_eligible_for_insurance('male', 35, True))  
+print(is_eligible_for_insurance('male', 35, False)) 
+print(is_eligible_for_insurance('male', 28, False)) 
+print(is_eligible_for_insurance('female', 32, True)) 
+print(is_eligible_for_insurance('female', 29, False)) 
+print(is_eligible_for_insurance('female', 30, False)) 
